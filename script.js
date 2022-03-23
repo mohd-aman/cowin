@@ -5,7 +5,7 @@ const xlsx = require("json-as-xlsx")
 let pin = process.argv[2];
 let age = Number(process.argv[3]);
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('https://www.cowin.gov.in/');
   await page.waitForSelector(".mat-ripple.mat-tab-label.mat-focus-indicator.ng-star-inserted");
@@ -95,7 +95,7 @@ let age = Number(process.argv[3]);
     writeOptions: {}, // Style options from https://github.com/SheetJS/sheetjs#writing-options
   }
   xlsx(data, settings)
-  fs.writeFileSync("ScheduleOfVaccination.json",vaccineSchedule);
+  // fs.writeFileSync("ScheduleOfVaccination.json",vaccineSchedule);
   console.log(vaccineSchedule);
   browser.close();
 })();
