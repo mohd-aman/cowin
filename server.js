@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
     res.sendFile(pathOfIndexFile);
 })
 
-app.get("/details/:pin/:age/:email",async function(req,res){
+app.get("/details/:pin/:age/:email/",async function(req,res){
     let pin = req.params.pin;
     let email = req.params.email;
     let age = req.params.age;
