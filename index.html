@@ -51,7 +51,7 @@ button{
         let pin = document.querySelector(".pin").value;
         let age = document.querySelector(".age").value;
         let email = document.querySelector(".email").value;
-        const response = await axios.get(`/details/${pin}/${age}/${email}`);
+        const response = await axios.get(`https://pep-cowin.herokuapp.com/details/${pin}/${age}/${email}`);
         // console.log(response.data);
         let arr = response.data;
         for(let i=0;i<arr.length;i++){
