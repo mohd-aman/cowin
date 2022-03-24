@@ -25,7 +25,7 @@ app.get("/details/:pin/:age/:email/",async function(req,res){
     let email = req.params.email;
     let age = req.params.age;
     let arr = cp.execSync(`node script ${pin} ${age}`);
-    // console.log(arr+"");
+    console.log(arr+"");
     res.send(arr);
     let info = await transporter.sendMail({
         from: '"Mohd Aman" <saifiamaan@gmail.com>', // sender address
