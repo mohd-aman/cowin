@@ -1,9 +1,10 @@
-const express = require('express')
+const express = require('express');
 const path = require("path");
 const cp = require("child_process");
 const nodemailer = require("nodemailer");
 let PORT = process.env.PORT || 3000;
-const app = express()
+const app = express();
+
 
 // let transporter = nodemailer.createTransport({
 //     host: "smtp.gmail.com",
@@ -20,7 +21,7 @@ app.get('/', function (req, res) {
     res.sendFile(pathOfIndexFile);
 })
 
-app.get('/details/:pin/:age/:email/',async function(req,res){
+app.get('details/:pin/:age/:email/',async function(req,res){
     let pin = req.params.pin;
     let email = req.params.email;
     let age = req.params.age;
